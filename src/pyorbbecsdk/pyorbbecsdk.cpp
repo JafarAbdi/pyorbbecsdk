@@ -163,10 +163,9 @@ PYBIND11_MODULE(pyorbbecsdk, m) {
     return std::to_string(major) + "." + std::to_string(minor) + "." +
            std::to_string(patch);
   });
-  // test set extensions
+  // set extensions directory
   auto extensions_path = get_extensions_path();
   if (!extensions_path.empty()) {
-    std::cout << "load extensions from " << extensions_path << std::endl;
     ob::Context::setExtensionsDirectory(extensions_path.c_str());
   }
   // context
@@ -244,10 +243,9 @@ PYBIND11_MODULE(pyorbbecsdk2, m) {
     return std::to_string(major) + "." + std::to_string(minor) + "." +
            std::to_string(patch);
   });
-  // test set extensions
+  // set extensions directory
   auto extensions_path = get_extensions_path();
   if (!extensions_path.empty()) {
-    std::cout << "load extensions from " << extensions_path << std::endl;
     ob::Context::setExtensionsDirectory(extensions_path.c_str());
   }
   // context
